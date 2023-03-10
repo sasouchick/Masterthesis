@@ -1,0 +1,184 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper,11pt]{memoir}
+
+% packages
+\usepackage{kantlipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+% Language
+\usepackage[english]{babel}
+%\usepackage[ngerman]{babel}
+\usepackage{helvet}
+\usepackage[style=numeric, backend=biber, backref, sorting=none]{biblatex} % use backend=biber if available
+\usepackage{graphicx}
+\usepackage{caption}
+\captionsetup[figure]{labelsep=space}
+\captionsetup[table]{labelsep=space}
+\usepackage{color} % \definecolor{heatred}[RGB}{170,0,0}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{siunitx} % \SI{15e3}{\kg}, \SI{0.2}{\m\per\s}, \si{\kWh}
+\usepackage{mdwlist} % compact lists: \begin{enumerate*}, \begin{itemize*}
+\usepackage{hyperref}
+\usepackage{bm} % bold italic symbols in math mode
+\usepackage{eurosym}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{colortbl}
+\usepackage{longtable}
+
+\usepackage{enumitem,amssymb}
+\newlist{checkbox}{itemize}{2}
+\setlist[checkbox]{label=$\square$}
+
+% enable floatbarriers
+\usepackage{placeins}
+% enable enumeration
+\usepackage{enumitem}
+%
+
+% Optional Packages
+
+% Algorithm2e (Nice formating of Pseudocode)
+%\usepackage[boxruled,algochapter,linesnumbered]{algorithm2e}
+%
+
+% PGF (Nice picture formating, mostly used in combination with tikz)
+%\usepackage{pgf}
+
+% Pgfplots (Ultimative plotting package for pgf)
+%\usepackage{pgfplots}
+
+% Pgfplotstable (For importing external data files for plots)
+%\usepackage{pgfplotstable}
+
+% Additional libraries for tikz and pgf
+%\usetikzlibrary{mindmap, trees, graphs, patterns}
+%\usetikzlibrary{arrows, decorations, positioning,fit,calc, backgrounds}
+%\usepgfplotslibrary{fillbetween,groupplots}
+%
+
+% Glossaries (List of Symbols, List of Abbreviations, etc.)
+% For glossaries, you will need a perl interpreter, e.g. http://www.activestate.com/activeperl/downloads
+%
+%\usepackage[
+%nonumberlist, %keine Seitenzahlen anzeigen
+%nomain,
+%nopostdot,
+%acronym,      %ein Abkürzungsverzeichnis erstellen
+%toc,          %Einträge im Inhaltsverzeichnis
+%shortcuts]		% \acs instead of acrshort and \acl instead of acrlong
+%%chapter]      %im Inhaltsverzeichnis auf section-Ebene erscheinen
+%{glossaries}
+
+
+
+
+% document information
+\title{Techno-economic analysis of the integration of heat pumps and electric vehicle loads in distribution networks}
+\author{Sabine H. Merzoug}
+\newcommand{\subtitle}{Not mandatory}
+\newcommand{\advisor}{Andelka Kerekes}
+\newcommand{\matrnr}{03746445}
+\newcommand{\firstn}{Sabine}
+\newcommand{\lastn}{Merzoug}
+\newcommand{\dateosub}{1st of May 2023}
+\newcommand{\thesistype}{Master's Thesis}
+\newcommand{\degree}{Master of Science}
+
+\newcommand{\address}{Dachauer Straße 187\\\>80637 München}
+\newcommand{\telephone}{+49 160 91070738}
+
+\input{tex/00-setup}
+
+\addbibresource{bib/biblio.bib}	% Backend biber!
+
+
+
+
+
+% Activate glossaries
+% \makeglossaries
+% Load glossary
+%\loadglsentries{tex/glossary}
+
+\begin{document}
+
+% English
+\input{tex/00-title-en}
+% German
+%\input{tex/00-title-de}
+
+\input{tex/00-abstract}
+\cleardoublepage
+% Include your project description
+%\includepdf[pages={1}]{img/projectdescription.pdf}
+%\addcontentsline{toc}{chapter}{Project Description}
+%\addcontensline{tox}{chapter}{Themenstellung}
+%\cleardoublepage
+
+% English
+\input{tex/00-statement-en}
+\addcontentsline{toc}{chapter}{Statement of Academic Integrity}
+% German
+%\input{tex/00-statement-de}
+%\addcontentsline{toc}{chapter}{Rechtserklärung}
+
+% English
+%\input{tex/00-declaration-en}
+%\addcontentsline{toc}{chapter}{Declaration for the transfer of the thesis}
+% German
+%\input{tex/00-declaration-de}
+%\addcontentsline{toc}{chapter}{Erklärung zur Weitergabe der Arbeit}
+
+
+% table of contents
+\cleardoublepage
+\tableofcontents
+
+% Optional List of Figures, Tables and Algorithms
+\cleardoublepage
+\listoffigures
+\cleardoublepage
+\listoftables
+%\listofalgorithms
+%\addcontentsline{toc}{chapter}{List of Algorithms}
+\newpage
+
+% content
+%Include your introduction, etc.
+\input{tex/01-introduction}
+\input{thesis-latex/tex/02-theory}
+\input{thesis-latex/tex/03-method}
+\input{thesis-latex/tex/04-result}
+\input{thesis-latex/tex/05-discussion}
+\input{thesis-latex/tex/06-conclusion}
+
+% appendices, bibliography, indices
+
+\appendix
+\input{thesis-latex/tex/A-emopby.tex}
+
+
+
+
+% Bibliography
+% http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#Bibliography_in_the_table_of_contents
+\clearpage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Bibliography}
+
+% List of Acronyms
+%\printglossary[type=\acronymtype, style=long]
+
+\printbibliography
+
+% \begin{appendices}
+% \input{thesis-latex/tex/A-emopby.tex}
+% \end{appendices}
+
+
+\end{document}

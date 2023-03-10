@@ -1,0 +1,145 @@
+% !TeX root = ../thesis.tex
+
+% package settings
+\definecolor{tumBlue}{RGB}{26,97,174} % use \textcolor{tumBlue}{some text}
+\renewcommand{\labelitemi}{--} % dash instead of bullet points
+\hypersetup{
+%colorlinks=true, % deactivate for print version
+pdfborder={0 0 0}, % hide borders around links
+pdfstartview={FitH}, 
+%bookmarksopen,
+bookmarksnumbered=true, 
+bookmarksopenlevel=2, 
+pdfauthor={\@author}, 
+pdftitle={\@title}, 
+pdfkeywords={}}
+
+
+% custom commands for titlepage
+\makeatletter 
+\AtBeginDocument{
+\newcommand{\MyTitle}{\@title}%
+\newcommand{\MyAuthor}{\@author}%
+\newcommand{\MyDate}{\@date}%
+} 
+
+% font: sans-serif
+\renewcommand{\familydefault}{\sfdefault}
+
+% floats
+\setfloatadjustment{table}{\small} %smaller font in tables
+
+% page layout
+\semiisopage
+\checkandfixthelayout
+\settocdepth{subsection}
+\setsecnumdepth{subsection}
+
+% babel french makecaption fix
+\AtBeginDocument{%
+  \begingroup\lccode`~=`:
+  \lowercase{\endgroup\captiondelim{~ }}%
+}
+
+
+
+% siunitx
+% \sisetup{per=slash,expproduct=cdot,retain-unity-mantissa=false,detect-all}
+% \DeclareSIUnit\year{a}      
+% \DeclareSIUnit\billion{$\!$b}
+% \DeclareSIUnit\million{$\!$m}
+% \DeclareSIUnit\thousand{$\!$k}
+% \DeclareSIUnit\USD{\$}
+% \DeclareSIUnit\EUR{\text{\euro}}  
+% \DeclareSIUnit\kWp{kW$\!_p$}
+% \DeclareSIUnit{\TWh}{TWh}
+% \DeclareSIUnit{\GWh}{GWh}
+% \DeclareSIUnit{\MWh}{MWh}
+% \AtBeginDocument{\DeclareSIUnit{\kWh}{kWh}}
+
+
+% custom commands
+\renewcommand{\vec}[1]{\bm{#1}}
+\newcommand{\mat}[1]{\bm{#1}}
+\newcommand{\E}{\mathsf{E}}
+\newcommand{\st}{\mathrm{s.t.}}
+\renewcommand{\P}{\ensuremath{\mathsf{P}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\VaR}{\text{VaR}}
+\newcommand{\ES}{\text{ES}}
+\newcommand{\CVaR}{\text{CVaR}}
+\renewcommand{\phi}{\varphi}
+
+% colors
+% TUM main colors
+\definecolor{tumblue}{RGB}{0, 101, 189}
+\definecolor{tumblack}{RGB}{0, 0, 0}
+\definecolor{tumwhite}{RGB}{255, 255, 255}
+
+% TUM blue tones (shades !85, !70, !55 allowed)
+\definecolor{tumdarkerblue}{RGB}{0, 51, 89}
+\definecolor{tumdarkblue}{RGB}{0, 82, 147}
+\definecolor{tummidblue}{RGB}{0, 115, 207}
+\definecolor{tumlightblue}{RGB}{0, 160, 200}
+\definecolor{tumlighterblue}{RGB}{0, 198, 234}
+
+% TUM grey tones
+\definecolor{tumdarkgrey}{RGB}{88, 88, 90}
+\definecolor{tumgrey}{RGB}{156, 157, 159}
+\definecolor{tumlightgrey}{RGB}{217, 218, 219}
+
+% TUM accent colors (shades !85, !70, !55 allowed)
+\definecolor{tumorange}{RGB}{227,114,34}
+\definecolor{tumgreen}{RGB}{162,173,0}
+\definecolor{tumivory}{RGB}{218,215,203}
+
+
+
+\newcommand\coolrightbrace[2]{%
+\left.\vphantom{\begin{matrix} #1 \end{matrix}}\right\}#2}
+
+\newcommand\coolunder[2]{\mathrlap{\smash{\underbrace{\phantom{%
+    \begin{matrix} #2 \end{matrix}}}_{\mbox{$#1$}}}}#2}
+
+
+\setcounter{MaxMatrixCols}{20}
+
+% Logos
+\newcommand\TUMlogo{%
+\begin{tikzpicture}
+  \path[fill=tumblue,nonzero rule]
+  (0.170,0.822) --(0.170,0.000) -- (0.348,0.000) -- (0.348,0.821) --
+  (0.546,0.821) -- (0.546,0.000) -- (1.113,0.000) -- (1.113,0.812) --
+  (1.314,0.812) -- (1.314,0.000) -- (1.501,0.000) -- (1.501,0.812) --
+  (1.706,0.812) -- (1.706,0.000) -- (1.892,0.000) -- (1.892,1.000) --
+  (0.933,1.000) -- (0.933,0.182) -- (0.728,0.182) -- (0.728,0.999) --
+  (0.000,0.999) -- (0.000,0.822) -- cycle (0.170,0.822);
+\end{tikzpicture}%
+}%
+
+
+\newcommand\EIlogo{%
+\begin{tikzpicture}[y=0.80pt,x=0.80pt,yscale=-1, inner sep=0pt, outer sep=0pt]
+\begin{scope}[shift={(-44.25,-222.32517)}]
+  \path[draw=tumblue,line join=miter,line cap=butt,miter limit=4.00,line
+    width=9.200pt] (50.0000,756.6482) -- (252.1430,756.6482) --
+    (252.1430,748.0772) .. controls (196.3860,732.4953) and (146.0808,698.0542) ..
+    (111.3859,651.7088) .. controls (76.6909,605.3634) and (57.8156,547.3934) ..
+    (58.5714,489.5050) .. controls (59.4712,420.5983) and (88.5387,352.4734) ..
+    (137.6618,304.1426) .. controls (186.7849,255.8118) and (255.3735,227.8557) ..
+    (324.2857,228.0765) .. controls (392.4946,228.5596) and (460.1139,256.6326) ..
+    (508.6090,304.6005) .. controls (557.1041,352.5684) and (585.9143,419.8769) ..
+    (587.1429,488.0765) .. controls (588.1916,546.2957) and (569.3653,604.6928) ..
+    (534.5102,651.3372) .. controls (499.6551,697.9816) and (448.9869,732.5847) ..
+    (392.8570,748.0772) -- (392.8570,756.6482) -- (595.0000,756.6482);
+  \path[draw=tumblue,line join=miter,line cap=butt,miter limit=4.00,line
+    width=9.200pt] (82.8571,596.6479) .. controls (137.5727,596.6479) and
+    (150.4368,387.6273) .. (244.8612,387.6273) .. controls (331.4404,387.6273) and
+    (341.2937,596.6479) .. (403.5714,596.6479) .. controls (477.8943,596.6479) and
+    (477.8571,388.0765) .. (561.4286,388.0765);
+\end{scope}
+\end{tikzpicture}%
+}%
+
+
+
